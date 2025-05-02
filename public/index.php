@@ -39,4 +39,12 @@ if ($match) {
 
 // صفحه 404
 header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-require BASE_PATH . '/app/views/404.php';
+try {
+    require BASE_PATH . '/app/views/404.php';
+} catch (Exception $e) {
+    echo '<div style="text-align: center; padding: 50px; font-family: Tahoma;">';
+    echo '<h1>404 - صفحه مورد نظر یافت نشد</h1>';
+    echo '<p>متأسفانه صفحه‌ای که به دنبال آن هستید در دسترس نیست.</p>';
+    echo '<a href="' . url() . '">بازگشت به صفحه اصلی</a>';
+    echo '</div>';
+}
