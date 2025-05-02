@@ -1,0 +1,251 @@
+/* تنظیمات اولیه */
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+    --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+    --dark-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* فونت‌ها */
+@font-face {
+    font-family: 'Anjoman';
+    src: url('../fonts/anjoman/AnjomanMax-Regular.woff') format('woff'),
+         url('../fonts/anjoman/AnjomanMax-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* تنظیمات کلی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Anjoman', sans-serif;
+    line-height: 1.7;
+    color: #334155;
+    overflow-x: hidden;
+}
+
+/* هدر و ناوبری */
+.header {
+    background: var(--dark-gradient);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* قهرمان */
+.hero {
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* دکمه‌ها */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: white;
+    color: #4f46e5;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ویژگی‌ها */
+.features {
+    padding: 8rem 2rem;
+    background: #f8fafc;
+}
+
+.features-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* قیمت‌گذاری */
+.pricing {
+    padding: 8rem 2rem;
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+.pricing-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: #334155;
+}
+
+/* گواهی‌ها */
+.testimonials {
+    padding: 8rem 2rem;
+    background: #ffffff;
+}
+
+.testimonial-slider {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* تماس */
+.contact {
+    padding: 8rem 2rem;
+    background: var(--dark-gradient);
+    color: white;
+}
+
+.contact-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* فوتر */
+.footer {
+    background: #0f172a;
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* ریسپانسیو */
+@media (max-width: 1024px) {
+    .hero-content,
+    .features-grid,
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content,
+    .features-grid,
+    .pricing-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}

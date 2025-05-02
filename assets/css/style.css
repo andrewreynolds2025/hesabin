@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Anjoman';
+    src: url('../fonts/anjoman/AnjomanMax-Regular.woff') format('woff'),
+         url('../fonts/anjoman/AnjomanMax-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Anjoman', sans-serif;
+    direction: rtl;
+}
+:root {
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 70px;
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+}
+
+body {
+    font-family: 'Anjoman', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background: var(--dark-color);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+.main-content {
+    margin-right: var(--sidebar-width);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-right: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+    padding: 20px;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* انیمیشن‌های سه‌بعدی */
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) rotateX(5deg);
+}
