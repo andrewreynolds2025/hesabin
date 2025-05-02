@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // تابع بررسی قدرت رمز عبور
     function checkPasswordStrength(password) {
         let strength = 0;
+        const strengthBarContainer = document.querySelector('.password-strength');
         const strengthBar = document.querySelector('.password-strength-bar');
+        
+        if (!strengthBar || !strengthBarContainer) return 0;
         
         // معیارهای قدرت رمز عبور
         if (password.length >= 8) strength++;

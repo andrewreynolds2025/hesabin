@@ -4,6 +4,8 @@ ob_start();
 
 <link rel="stylesheet" href="<?= url('assets/css/auth.css') ?>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- اضافه کردن فونت وزیر -->
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
 
 <div class="auth-container">
     <div class="auth-box fade-in">
@@ -42,7 +44,9 @@ ob_start();
                 <button type="button" class="password-toggle">
                     <i class="fas fa-eye"></i>
                 </button>
-                <div class="password-strength"></div>
+                <div class="password-strength">
+                    <div class="password-strength-bar"></div>
+                </div>
                 <div class="password-requirements">
                     رمز عبور باید حداقل 8 کاراکتر و شامل حروف بزرگ، کوچک، اعداد و علائم خاص باشد
                 </div>

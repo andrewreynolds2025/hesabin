@@ -1,3 +1,56 @@
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.woff2') format('woff2'),
+         url('../fonts/Vazir.woff') format('woff'),
+         url('../fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #e2e2e2 0%, #c9d6ff 100%);
+    --text-color: #2d3748;
+    --error-color: #e53e3e;
+    --success-color: #38a169;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+    background: var(--primary-gradient);
+    line-height: 1.6;
+}
+
+/* ... سایر استایل‌ها ... */
+
+.password-strength {
+    width: 100%;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* ... ادامه استایل‌ها ... */
 /* استایل‌های صفحه ثبت نام */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -283,4 +336,221 @@
 .form-checkbox label {
     color: var(--text-color);
     font-size: 0.9rem;
+}
+
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    padding: 2rem;
+    font-family: Vazir, Tahoma, Arial, sans-serif;
+}
+
+.auth-box {
+    background: var(--secondary-gradient);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 25px -5px var(--shadow-color),
+                0 10px 10px -5px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.auth-subtitle {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: var(--input-bg);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+}
+
+.password-toggle {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: var(--text-color);
+}
+
+/* بخش نشانگر قدرت رمز عبور */
+.password-strength {
+    background: #e2e8f0;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.password-requirements {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #667eea;
+    border-radius: 4px;
+}
+
+.form-checkbox label {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-gradient);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.auth-links a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #764ba2;
+}
+
+/* کلاس‌های مربوط به نشانگر قدرت رمز عبور */
+.strength-weak { background-color: #e53e3e; width: 25%; }
+.strength-medium { background-color: #ecc94b; width: 50%; }
+.strength-strong { background-color: #48bb78; width: 75%; }
+.strength-very-strong { background-color: #38a169; width: 100%; }
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* رسپانسیو */
+@media (max-width: 640px) {
+    .auth-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 2rem;
+    }
+
+    .auth-subtitle {
+        font-size: 1rem;
+    }
+
+    .form-input {
+        padding: 0.875rem;
+    }
 }

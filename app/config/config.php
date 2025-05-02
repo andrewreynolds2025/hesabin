@@ -1,4 +1,10 @@
 <?php
+// تنظیمات محیط برنامه
+define('ENVIRONMENT', 'development'); // یا 'production'
+
+// تنظیمات مسیر لاگ‌ها
+define('LOG_PATH', dirname(dirname(__DIR__)) . '/logs/');
+
 // تنظیمات پایه
 define('SITE_NAME', 'حسابین');
 define('APP_URL', 'http://localhost/hesabin');
